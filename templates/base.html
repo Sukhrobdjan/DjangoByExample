@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+
+</head>
+<body>
+    <div>
+        <h2>My blog </h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Nemo necessitatibus vel eos veniam fugit aliquid dolores 
+            sint nisi dolorem libero ex, a dicta delectus quas accusamus 
+            corporis id velit. At?</p>
+    </div>
+    <div>
+        {% block content %}
+
+        {% endblock content  %}
+    </div>
+
+</body>
+</html>

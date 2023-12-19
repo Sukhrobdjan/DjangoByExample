@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <span>
+        {% if page.has_previous %}
+            <a href="?page={{ page.previous_page_number }}">Prev</a>
+        {% endif %}
+    </span>
+    <span>
+        Page {{ page.number }} of {{ page.paginator.num_pages }}
+    </span>
+    <span>
+        {% if page.has_next %}
+            <a href="?page={{ page.next_page_number }}">Next</a>
+        {% endif %}
+    </span>
+</body>
+</html>
