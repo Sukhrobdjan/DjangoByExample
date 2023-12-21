@@ -8,9 +8,9 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def post_list(request):
 
-    posts = Post.published.all()
+    post_lists = Post.published.all()
 
-    paginator = Paginator(Post.objects.all(), 2)
+    paginator = Paginator(post_lists, 2)
     page_number = request.GET.get('page', 1) 
 
     try:
