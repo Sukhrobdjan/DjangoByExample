@@ -9,14 +9,20 @@
 <body>
     {% block content %}
 
+
     {% for post in posts %}
-    <h2>
-        <!-- % url 'blog:post_detail' post.id % -->
-        <a href="{{ post.get_absolute_url }}"> {{ post.title }}</a>
-        <p>Published {{ post.publish }} by {{ post.author }}</p>
-        {{ post.body|truncatewords:30|linebreaks }}
-    </h2>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h1><a href="{{ post.get_absolute_url }}"> {{ post.title }}</a></h1>
+                <!-- % url 'blog:post_detail' post.id % -->
+                <p class="card-text">Published {{ post.publish }} by {{ post.author }}.</p>
+                <a href="#" class="card-link">Card link</a>
+                <a href="#" class="card-link">Another link</a>
+                {{ post.body|truncatewords:30|linebreaks }}
+            </div>
+        </div>
     {% endfor %}
+
 
     {% include "pagination.html" with page=posts %}
     
